@@ -14,6 +14,94 @@
       if (callNow) func.apply(context, args);
     };
   };
+  
+  function resizeCanvas(id,id2){
+    var el = document.getElementById(id);
+    var scene = document.getElementById(id2);
+    var newWidth,
+        newHeight;
+    
+    window.onresize = clipCanvas;
+    function clipCanvas(){
+      console.log("resize" + scene +" in "+ el);
+      newWidth = el.offsetWidth;
+      newHeight = el.offsetHeight;
+      console.log("new Width: " + newWidth + ", new Height: " + newHeight);
+      scene.setAttribute("width",newWidth);
+      scene.setAttribute("height",newHeight);
+      drawGrid('gallery-content');
+    }
+    clipCanvas();
+  }
+
+  function drawGridTriangle(id){
+    var canvas = document.getElementById(id); 
+    console.log(canvas);
+    if (canvas.getContext){
+      var ctx = canvas.getContext("2d");
+      for (var i = 1; i < 20; i += 1){
+        ctx.beginPath();
+        if (i === 1){
+          ctx.moveTo(0,0);
+        }
+        else {
+          ctx.moveTo((i-1) * 100,0);
+        }
+        
+        ctx.lineTo(100 * i,0);
+        ctx.lineTo(50 + (i-1) * 100,100);
+        ctx.closePath();
+        
+        ctx.stroke();
+      }
+
+      //ctx.fill();
+    } 
+  }
+  
+  function drawGrid(id){
+    var canvas = new fabric.Canvas(id);
+    var rect;
+    var xfactor,
+        yfactor;
+    var polyWidth = 200;
+    console.log(canvas);
+    if (canvas.getContext){
+      for (var i = 0; i < 4; i += 1){
+        for (var j = 0; j < 5; j += 1) {
+          if (j % 2 === 0){
+            xfactor = 0
+          }
+          else {
+            xfactor = polyWidth / 2 - 12.5;
+          }
+          rect = new fabric.Polyline([
+            {x: polyWidth / 2, y: 0},
+            {x: polyWidth - 12.5, y: 50},
+            {x: polyWidth - 12.5, y: 150},
+            {x: polyWidth / 2, y: polyWidth},
+            {x: 12.5, y: 150},
+            {x: 12.5, y: 50},
+            {x: polyWidth / 2, y: 0},
+          ],
+          {
+            left: polyWidth / 2 + 175 * i + xfactor,
+            top: polyWidth / 2 + 150 * j,
+            fill: 'rgba(0,0,0,0.5)',
+            angle: 0,
+            cornerSize: 30,
+            stroke: 'red',
+            strokeWidth: 3,
+            hasBorders: false,
+            cornerColor: 'rgba(0,0,0,0)'
+          });
+
+          canvas.add(rect);
+        }
+      }
+     }
+   }
+      //ctx.fill(); 
 
   function movingGallery(id,id2){
     var el = document.getElementById(id);
@@ -42,20 +130,8 @@
     el.onmousemove = debounce(translateScene, 10);
   }
 
-  function drawGrid(id){
-   var canvas = document.getElementById(id); 
-   console.log(canvas);
-   if (canvas.getContext){
-     var ctx = canvas.getContext("2d");
-     ctx.fillStyle = "rgb(200,0,0)";
-     ctx.fillRect(10,10,55,50);
-     
-     ctx.fillStyle = "rgba(0,0,200, 0.5)";
-     ctx.fillRect(30,30,55,50);
-     ctx.translate(0.5, 0.5);
-   } 
-  }
-  
-  drawGrid('gallery-content');
-  movingGallery('gallery-wrapper','gallery-content');
+
+  resizeCanvas('gallery-wrapper','gallery-content');
+  //drawGrid('gallery-content');
+  //movingGallery('gallery-wrapper','gallery-content');
 })();

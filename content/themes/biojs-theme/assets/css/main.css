@@ -205,10 +205,10 @@ p.signal {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 20vh; }
+  height: 120%; }
   .gallery-wrapper .gallery-content {
-    padding: 4em 0;
-    height: 30vh;
+    padding: 0;
+    height: 100%;
     width: 120%; }
 
 /* Buttons */
@@ -258,6 +258,9 @@ p.signal {
   text-shadow: 2px 2px 3px #072212; }
   .text-shadow.light {
     text-shadow: 2px 2px 3px #FFFFFC; }
+
+.hiding-frame {
+  overflow: hidden; }
 
 .header-section {
   background-image: url("/assets/img/landscapes/typing.jpg");
