@@ -153,6 +153,36 @@ h3 {
 .bg-cover {
   background-size: cover; }
 
+.height-1x {
+  height: 10vh; }
+
+.height-2x {
+  height: 20vh; }
+
+.height-3x {
+  height: 30vh; }
+
+.height-4x {
+  height: 40vh; }
+
+.height-5x {
+  height: 50vh; }
+
+.height-6x {
+  height: 60vh; }
+
+.height-7x {
+  height: 70vh; }
+
+.height-8x {
+  height: 80vh; }
+
+.height-9x {
+  height: 90vh; }
+
+.height-10x {
+  height: 100vh; }
+
 body {
   background-color: #FFFFFC;
   display: flex;
@@ -227,6 +257,8 @@ p.signal {
   line-height: 0;
   height: auto;
   color: rgba(255, 255, 255, 0.9); }
+  .parallax-container p, .parallax-container a {
+    line-height: 1.5; }
 
 .parallax-container .section {
   width: 100%; }
@@ -261,6 +293,10 @@ p.signal {
 
 .hiding-frame {
   overflow: hidden; }
+
+.row .col.fill {
+  padding-left: 0;
+  padding-right: 0; }
 
 .header-section {
   background-image: url("/assets/img/landscapes/typing.jpg");

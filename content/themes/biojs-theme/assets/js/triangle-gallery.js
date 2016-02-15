@@ -15,20 +15,20 @@
     };
   };
   
-  function resizeCanvas(id,id2){
-    var el = document.getElementById(id);
-    var scene = document.getElementById(id2);
-    var newWidth,
-        newHeight;
-    
+  function resizeCanvas(id,id2){    
     window.onresize = clipCanvas;
     function clipCanvas(){
+      var el = document.getElementById(id);
+      var scene = document.getElementById(id2);
+      var newWidth,
+          newHeight;
       console.log("resize" + scene +" in "+ el);
-      newWidth = el.offsetWidth;
-      newHeight = el.offsetHeight;
+      newWidth = el.clientWidth;
+      newHeight = el.clientHeight;
       console.log("new Width: " + newWidth + ", new Height: " + newHeight);
-      scene.setAttribute("width",newWidth);
-      scene.setAttribute("height",newHeight);
+      scene.width = newWidth;
+      scene.height = newHeight;
+      console.log("canvasElement width: " + scene.getAttribute("width"));
       drawGrid('gallery-content');
     }
     clipCanvas();
