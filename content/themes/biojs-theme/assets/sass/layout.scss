@@ -109,8 +109,11 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 
-  p, a {
+  p, a{
     line-height: 1.5;
+    &.btn, &.btn-large {
+      line-height: 2.4;
+    }
   }
 }
   .parallax-container .section {
@@ -130,6 +133,15 @@ p {
 @media only screen and (max-width : 600px) {
   #index-banner .section {
     top: 0;
+  }
+}
+.main-header {
+  &.news {
+    background-repeat: no-repeat;
+    background-position: right -60px;
+    background-attachment: scroll;
+    background-image: url('/assets/img/biojslogo.png');
+    @include vendor('filter', blur(59px));
   }
 }
 

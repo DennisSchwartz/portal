@@ -8,10 +8,8 @@
       indicators: false,
       interval: 1500
     });
-    GitHubActivity.feed({
-        username: "biojs",
-        selector: "#feed",
-        limit: 20 // optional
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
   });
 })();

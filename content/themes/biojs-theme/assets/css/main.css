@@ -116,6 +116,8 @@ p.signal {
   color: rgba(255, 255, 255, 0.9); }
   .parallax-container p, .parallax-container a {
     line-height: 1.5; }
+    .parallax-container p.btn, .parallax-container p.btn-large, .parallax-container a.btn, .parallax-container a.btn-large {
+      line-height: 2.4; }
 
 .parallax-container .section {
   width: 100%; }
@@ -130,6 +132,17 @@ p.signal {
 @media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0; } }
+.main-header.news {
+  background-repeat: no-repeat;
+  background-position: right -60px;
+  background-attachment: scroll;
+  background-image: url("/assets/img/biojslogo.png");
+  -webkit-filter: blur(59px);
+  -moz-filter: blur(59px);
+  -ms-filter: blur(59px);
+  -o-filter: blur(59px);
+  filter: blur(59px); }
+
 .header-section {
   background-image: url("/assets/img/landscapes/typing.jpg");
   position: relative;
@@ -315,6 +328,7 @@ span.gha-time {
   color: #495961; }
 
 .gha-github-icon .octicon {
+  color: #FFFFFC;
   font: normal normal 40px octicons; }
 
 .gha-gravatar {
@@ -413,15 +427,11 @@ span.gha-time {
   display: inline-block;
   float: left;
   margin: 0 auto;
-  padding: 6px 10px 5px;
-  color: #495961;
-  font-size: 20px; }
-
-.gha-user-info a {
-  color: #495961; }
-
-.gha-user-info p a {
-  font-weight: 100; }
+  padding: 10px 15px 8px;
+  font-size: 18px; }
+  .gha-user-info a, .gha-user-info p {
+    color: #FFFFFC;
+    font-weight: 100; }
 
 .gha-without-name {
   padding-top: 20px;

@@ -12,6 +12,14 @@ $colors: (
   'pink': $fifth-color
 );
 
+@mixin vendor ($prop, $val){
+  -webkit-#{$prop}: $val;
+  -moz-#{$prop}: $val;
+  -ms-#{$prop}: $val;
+  -o-#{$prop}: $val;
+  #{$prop}: $val;
+}
+
 @function color($color){
   @return map-get($colors, $color);
 }
