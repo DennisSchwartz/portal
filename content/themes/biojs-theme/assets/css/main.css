@@ -48,6 +48,14 @@ main {
 p.signal {
   font-size: 1.2em; }
 
+a[href] {
+  color: #EF2D56; }
+  a[href].btn, a[href].btn-large {
+    color: #FFFFFC; }
+
+.nav-wrapper a {
+  color: #FFFFFC; }
+
 .github-icon.large {
   width: 50%;
   height: 50%;
@@ -73,6 +81,7 @@ p.signal {
   top: 8px; }
 
 .main-logo-title {
+  color: #FFFFFC;
   display: inline-block;
   position: absolute;
   left: 60px;
@@ -84,6 +93,18 @@ p.signal {
 .link-icon {
   position: relative;
   top: 2px; }
+
+.post-title a {
+  -webkit-transition: color 0.2 ease-in;
+  -moz-transition: color 0.2 ease-in;
+  -ms-transition: color 0.2 ease-in;
+  -o-transition: color 0.2 ease-in;
+  transition: color 0.2 ease-in; }
+  .post-title a:hover {
+    color: #EF2D56; }
+
+.post-meta a {
+  color: #EF2D56; }
 
 @media (min-width: 768px) {
   .carousel-item.large {
@@ -137,11 +158,17 @@ p.signal {
   background-position: right -60px;
   background-attachment: scroll;
   background-image: url("/assets/img/biojslogo.png");
-  -webkit-filter: blur(59px);
-  -moz-filter: blur(59px);
-  -ms-filter: blur(59px);
-  -o-filter: blur(59px);
-  filter: blur(59px); }
+  -webkit-filter: contrast(80%);
+  -moz-filter: contrast(80%);
+  -ms-filter: contrast(80%);
+  -o-filter: contrast(80%);
+  filter: contrast(80%); }
+  .main-header.news .container {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+    filter: none; }
 
 .header-section {
   background-image: url("/assets/img/landscapes/typing.jpg");

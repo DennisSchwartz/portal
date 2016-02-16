@@ -27,6 +27,17 @@ p {
     font-size: 1.2em;
   }
 }
+a[href]{
+  color: color('pink');
+  &.btn, &.btn-large {
+    color: color('white');
+  }
+}
+.nav-wrapper {
+  a {
+    color: color('white');
+  }
+}
 .github-icon {
   &.large {
     width: 50%;
@@ -59,6 +70,7 @@ p {
   top: 8px;
 }
 .main-logo-title {
+  color: color('white');
   display: inline-block;
   position: absolute;
   left: 60px;
@@ -71,6 +83,19 @@ p {
 .link-icon {
   position: relative;
   top: 2px;
+}
+.post-title {
+  a {
+    @include vendor('transition', color 0.2 ease-in);
+    &:hover {
+      color: color('pink');
+    }
+  }
+}
+.post-meta {
+  a {
+    color: color('pink');
+  }
 }
 @media (min-width: 768px) {
 .carousel-item.large {
@@ -141,7 +166,10 @@ p {
     background-position: right -60px;
     background-attachment: scroll;
     background-image: url('/assets/img/biojslogo.png');
-    @include vendor('filter', blur(59px));
+    @include vendor('filter', contrast(80%));
+    .container {
+      @include vendor('filter', none);
+    }
   }
 }
 
