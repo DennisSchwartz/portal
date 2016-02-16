@@ -53,7 +53,9 @@
       {{> tip-section}}
     </section>
     {{#has tag="brandpage-developers"}}
+    <section class="container">
       {{> bene}}
+    </section>
     {{/has}}
     <section class="biojs-black biojs-white-text center">
       {{> showcase}}
@@ -78,7 +80,6 @@
       {{#has tag="brandpage-developers"}}
     <section class="biojs-green">
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
-      <link rel="stylesheet" href="{{asset "css/github-activity-0.1.4.min.css"}}">
       <div class="container">
         <div class="row">
           <div class="col s12 m6">
@@ -88,7 +89,7 @@
             <iframe src="https://ghbtns.com/github-btn.html?user=biojs&repo=biojs&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe></p>
           </div>
           <div class="col s12 m6">
-            <div id="feed" class="height-5x biojs-black-text"></div>
+            <div id="feed" class="mt-2 mb-1 height-fix-3x biojs-black-text"></div>
           </div>
         </div>
        </div>
