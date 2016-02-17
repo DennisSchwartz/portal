@@ -9,30 +9,24 @@
 
 {{! Everything inside the #post tags pulls data from the page }}
 
+    {{#has tag="gsoc"}}
+      {{> gsoc}}
+    {{else}}
+      <main class="content" role="main">
+          <article class="{{post_class}}">
 
-<header class="main-header news biojs-green biojs-white-text post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-  <div class="container relative">
-    <div class="row mt-1 mb-4">
-      <div class="col s12 center">
-        <h1 class="mb-0">BioJS News</h1>
-        <h3 class="subtitle light">Current developments in the BioJS ecosystem</h3>
-      </div>
-    </div>
-  </div>
-</header>
-<main class="content" role="main">
-    <article class="{{post_class}}">
+              <header class="post-header">
+                  <h1 class="post-title">There is nothing to see here</h1>
+              </header>
 
-        <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
-        </header>
+              <section class="post-content">
+                  404 magic!
+                  <p><a href="/" class="btn-large action">Go back Home</a></p>
+              </section>
 
-        <section class="post-content">
-            {{content}}
-        </section>
-
-    </article>
-</main>
-{{/has}}
+          </article>
+      </main>
+    {{/has}}
+  {{/has}}
 {{/post}}
 
